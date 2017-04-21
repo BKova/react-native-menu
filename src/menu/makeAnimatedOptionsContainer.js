@@ -6,16 +6,16 @@ module.exports = (React, ReactNative) => {
   const AnimatedOptionsContainer = React.createClass({
     mixins: [TimerMixin],
     getInitialState() {
-      return { scaleAnim: new Animated.Value(0.001) };
+      return { scaleAnim: new Animated.Value(1) };
     },
-    componentDidMount() {
+    /*componentDidMount() {
       this.setTimeout(() => {
         Animated.timing(this.state.scaleAnim, {
-          duration: 60,
+          duration: 120,
           toValue: 1
         }).start();
       }, 16);
-    },
+    },*/
     render() {
       return (
         <Animated.View style={[this.props.style, { transform: [ { scale: this.state.scaleAnim } ] }]}>
@@ -27,3 +27,5 @@ module.exports = (React, ReactNative) => {
 
   return AnimatedOptionsContainer;
 };
+
+//This file was modified to disable animations of poor quality
